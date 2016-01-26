@@ -13,7 +13,7 @@ public class LawineServer
 		"styria", 
 /*		"tyrol",
 		"southtyrol",
-*/		"carinthia",
+*/	//	"carinthia",
 
 		"vorarlberg",
 		"upperaustria",
@@ -41,13 +41,12 @@ public class LawineServer
 
 	public static final void main(String[] args)
     {
-//    	Properties prop = System.getProperties();
-//    	prop.put("http.proxyHost", "172.16.1.4");
-//    	prop.put("http.proxyPort", "80");
-
 		// Set the Microsoft Translator API Key - Get yours at http://www.bing.com/developers/createapp.aspx
 		Translate.setKey("4C2B4C498E936A3FEEB32F247DEC58CF5EBBAF50");
 
+		// since there's no other argument -> quick and dirty 
+		if (args.length > 0)
+			Settings.Instance().NewValues();
 		
     	String [] directories = new String[Locations.length];
     	String [] mapFiles = new String[Locations.length];
